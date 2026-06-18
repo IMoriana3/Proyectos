@@ -468,7 +468,7 @@ const PROJECTS = [
   {
     name: "Visor San José",
     status: "live",
-    objetivo: "Visor offline para casar 18.190 puntos topográficos con 2.289 IDs de seguidor (Acciona, Aragón) mediante flujo de coste mínimo.",
+    objetivo: "Visor offline para casar 18.190 puntos topográficos con 2.289 IDs de seguidor (Acciona, La Joya (Arequipa)) mediante flujo de coste mínimo.",
     stack: "HTML offline · datos NetworkX (min-cost flow)",
     url: "https://imoriana3.github.io/visor-san-jose/",
     repo: "https://github.com/imoriana3/visor-san-jose",
@@ -583,6 +583,32 @@ const PROJECTS = [
       { date:"2026-06-16", ver:"", note:"Documentación completa (README) integrada en el panel." },
       { date:"2026-06-16", ver:"", note:"Versión máquina del tiempo: colorear por RSSI/Estado/ACK/Saltos/Criticidad y recolector de rutas por telnet." },
       { date:"2026-06-16", ver:"", note:"Visor inicial con Leaflet incrustado." }
+    ]
+  },
+  {
+    name: "Cobertura RF · Seguidores FV",
+    status: "build",
+    objetivo: "Modelo físico de propagación Zigbee 2.4 GHz (XBee RR) entre TCU y NCU: un motor, tres usos — siting predictivo, diagnóstico de malla real (predicho vs. medido → grafo → SPOF) y render 3D del enlace bifila.",
+    stack: "HTML · Canvas 3D · Python (NumPy/NetworkX) · JS",
+    url: "https://imoriana3.github.io/cobertura-rf-fv/",
+    repo: "https://github.com/imoriana3/cobertura-rf-fv",
+    updated: "2026-06-18",
+    version: "",
+    docId: "cobertura-rf",
+    download: "",
+    uso: [
+      "Render index.html (sin dependencias): geometría bifila parametrizable y enlace coloreado por margen real en dB; abre en navegador o GitHub Pages.",
+      "Física: FSPL + dos rayos (Fresnel) + difracción multiobstáculo (Deygout, ITU-R P.526) + margen log-normal calibrable → RSSI predicho, margen y probabilidad de enlace.",
+      "Diagnóstico Python: coords + RSSI medido → calibra sesgo, construye la malla (NetworkX), detecta SPOF y nodo dominador, escribe GeoJSON.",
+      "Adaptador El Burgo: routes + log → RSSI por enlace + topología observada (elburgo_real_rssi.csv / elburgo_real.geojson incluidos como dataset real)."
+    ],
+    pendientes: [
+      { done:false, text:"Crear el repo cobertura-rf-fv y subir las carpetas python/, web/ y assets/." },
+      { done:false, text:"Calibrar con el dataset completo de El Burgo I (de momento, sesgo global contra RSSI medido)." },
+      { done:false, text:"Validar el núcleo físico contra ray tracing." }
+    ],
+    historial: [
+      { date:"2026-06-18", ver:"", note:"Alta en el panel: render 3D + núcleo físico + diagnóstico y dataset real de El Burgo." }
     ]
   },
   {

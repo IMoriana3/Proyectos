@@ -459,22 +459,22 @@ const PROJECTS = [
     historial: [ { date:"2026-06-22", ver:"", note:"Plantilla de creación en la cartera (Siting en blanco)." } ]
   },
   {
-    name: "Nuevo mapa de cobertura",
+    name: "Creación de planta",
     status: "live",
-    objetivo: "Genera el 2D/3D de cobertura de una planta nueva: sube un CSV de seguidores (lat,lng) y lo previsualizas al momento. Self-service.",
-    stack: "HTML · Three.js · satélite + DEM",
-    url: "https://imoriana3.github.io/cobertura-zigbee/nuevo.html",
+    objetivo: "Da de alta una planta nueva: datos base + implantación (CSV o DXF). Reconoce los bloques de tracker midiendo su geometría (módulos/ala) y previsualiza el 2D/3D. Funciona offline.",
+    stack: "HTML offline · UTM↔WGS84 · parser DXF · Three.js",
+    url: "https://imoriana3.github.io/cobertura-zigbee/crear.html",
     repo: "https://github.com/imoriana3/cobertura-zigbee",
     updated: "2026-06-22",
     version: "",
     docId: "",
     docUrl: "",
     uso: [
-      "Sube el CSV de seguidores (lat,lng; opcional id, tipo, ncu, gw). Hay plantilla.",
-      "Previsualiza el mapa en 3D/2D al instante; descarga el layout.json para dejarlo fijo en la cartera."
+      "Metes datos base (nombre, zona UTM, módulos/ala) y subes el CSV (lat,lng/x,y) o el DXF de la planta.",
+      "Detecta los bloques de tracker por su TAMAÑO (no por el nombre) → tipo y módulos; previsualiza y descarga el layout."
     ],
-    pendientes: [ { done:false, text:"Importar NCUs/meteo y leer el export del Siting" } ],
-    historial: [ { date:"2026-06-22", ver:"", note:"Generador self-service CSV → layout + previsualización 3D/2D." } ]
+    pendientes: [ { done:false, text:"DWG nativo vía GitHub Action (libredwg) · importar NCUs/meteo" } ],
+    historial: [ { date:"2026-06-22", ver:"", note:"Creación de planta: datos base + CSV/DXF, reconocimiento de bloques por geometría." } ]
   },
   {
     name: "Checklist Solar v2",

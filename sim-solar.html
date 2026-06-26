@@ -415,7 +415,7 @@ function loadPlantsLocal(){
 }
 function loadPlantsSupabase(){
   try{
-    var u=SB_URL.replace(/\/+$/,'')+'/rest/v1/plantas?select=code,proyecto,lat,lng,lon,pitch,wmod,string';
+    var u=SB_URL.replace(/\/+$/,'')+'/rest/v1/plantas?select=*';   // * evita 400 por columnas inexistentes
     fetch(u,{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY},cache:'no-store'})
       .then(function(r){return r.ok?r.json():null;})
       .then(function(rows){
